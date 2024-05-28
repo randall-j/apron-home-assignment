@@ -33,8 +33,7 @@ npm run dev
 
 Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page will reload when you make changes. You may also see any lint errors in the console.
 
 ## Testing
 
@@ -44,13 +43,7 @@ To run the unit tests in `src`, run:
 npm test
 ```
 
-To run the end-to-end tests in `tests`, run:
-
-```bash
-npm run dev
-```
-
-if the dev server is not already running, then run:
+To run the end-to-end tests in `tests`, first ensure that the development server is running, and then run:
 
 ```bash
 npm run test:e2e
@@ -64,8 +57,6 @@ To build the project, run:
 npm run build
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes.
