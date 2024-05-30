@@ -63,12 +63,12 @@ const UserForm = ({
     mutationKey: ['deleteUser', user?.id],
     mutationFn: async (userData: FormData) => {
       if (user) {
-        await request<null>(`/api/users/${user.id}`, {
+        await request(`/api/users/${user.id}`, {
           method: 'PATCH',
           body: JSON.stringify(userData),
         });
       } else {
-        await request<null>('/api/users', {
+        await request('/api/users', {
           method: 'POST',
           body: JSON.stringify(userData),
         });

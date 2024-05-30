@@ -1,15 +1,20 @@
-const request = async <T>(url: string, options?: RequestInit): Promise<T> => {
+const request = async <T extends object = Record<string, never>>(
+  url: string,
+  options?: RequestInit
+): Promise<T> => {
   const response = await fetch(url, options);
 
   if (response.status === 204) {
     return {} as T;
   }
 
-  const data = await response.json();
-
   if (!response.ok) {
-    throw new Error(data.message || response.status.toString());
+    const error: { message?: string } = await response.json();
+
+    throw new Error(error.message || response.status.toString());
   }
+
+  const data: T = await response.json();
 
   return data;
 };

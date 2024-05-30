@@ -36,7 +36,6 @@ const DeleteUserDialog = ({
   } = useMutation({
     mutationKey: ['deleteUser', userId],
     mutationFn: async () => {
-      // await userApi.deleteUser(userId);
       await request(`/api/users/${userId}`, {
         method: 'DELETE',
       });
