@@ -69,7 +69,7 @@ test('submit the user form with empty fields', async ({ page }) => {
   await expect(page.getByText('Please enter a first name')).toBeVisible();
   await expect(page.getByText('Please enter a last name')).toBeVisible();
   await expect(page.getByText('Please select a gender')).toBeVisible();
-  await expect(page.getByText('Age must be a number')).toBeVisible();
+  await expect(page.getByText('Please enter a valid age')).toBeVisible();
 });
 
 test('submit the user form with invalid fields', async ({ page }) => {

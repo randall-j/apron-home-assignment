@@ -43,7 +43,7 @@ const schema = yup
         otherwise: (schema) => schema.max(112, 'Age must be 112 or less'),
       })
       .min(18, 'Age must be 18 or more')
-      .typeError('Age must be a number')
+      .typeError('Please enter a valid age')
       .required('Please enter an age'),
   })
   .required();

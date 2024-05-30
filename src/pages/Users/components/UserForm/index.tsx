@@ -121,7 +121,7 @@ const UserForm = ({
 
             <FormControl isInvalid={!!errors.age}>
               <FormLabel>Age</FormLabel>
-              <NumberInput min={0}>
+              <NumberInput clampValueOnBlur={false} min={0}>
                 <NumberInputField placeholder="Age" {...register('age')} />
                 <NumberInputStepper>
                   <NumberIncrementStepper />
