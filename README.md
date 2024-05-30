@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is the Apron take home assignment for the role of Senior Frontend Engineer. It is a simple web application that displays a list of users, and allows you to create and edit users.
+This project is the Apron take home assignment for the role of Senior Frontend Engineer. It is a simple web application that displays a list of users stored in a mock backend using MirageJS, and allows you to create and edit users.
 
 ## Tech Stack
 
