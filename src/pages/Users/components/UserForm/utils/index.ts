@@ -1,1 +1,1 @@
-export * from './validation';
+export { default as formResolver } from './validation';

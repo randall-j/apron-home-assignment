@@ -48,7 +48,7 @@ const schema = yup
   })
   .required();
 
-export const formResolver: Resolver<FormData> = (values, context, options) => {
+const formResolver: Resolver<FormData> = (values, context, options) => {
   const modifiedValues: FormData = {
     ...values,
     firstName: trimSpaces(values.firstName),
@@ -57,3 +57,5 @@ export const formResolver: Resolver<FormData> = (values, context, options) => {
 
   return yupResolver(schema)(modifiedValues, context, options);
 };
+
+export default formResolver;
