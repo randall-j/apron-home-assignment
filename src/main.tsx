@@ -3,10 +3,9 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ReactDOM from 'react-dom/client';
 
+import makeServer from './api/server.ts';
 import App from './App.tsx';
 import './index.css';
-
-import makeServer from './api/server.ts';
 
 if (
   process.env.NODE_ENV === 'development' &&
