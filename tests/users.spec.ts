@@ -8,7 +8,7 @@ const createNewUser = async (page: Page) => {
   await page.getByLabel('Last name').fill('Baggins');
   await page.getByLabel('Gender').selectOption('MALE');
   await page.getByLabel('Age').fill('50');
-  await page.getByRole('button', { name: 'Submit' }).click();
+  await modal.getByRole('button', { name: 'Submit' }).click();
   await expect(modal).toBeHidden();
   await expect(page.getByText('User created successfully')).toBeVisible();
   await expect(page.getByText('Frodo')).toBeVisible();
@@ -41,7 +41,7 @@ test('edit a user', async ({ page }) => {
   await page.getByLabel('Last name').fill('Benes');
   await page.getByLabel('Gender').selectOption('FEMALE');
   await page.getByLabel('Age').fill('27');
-  await page.getByRole('button', { name: 'Submit' }).click();
+  await modal.getByRole('button', { name: 'Submit' }).click();
   await expect(modal).toBeHidden();
   await expect(page.getByText('User updated successfully')).toBeVisible();
   await expect(page.getByText('Elaine')).toBeVisible();
@@ -53,7 +53,7 @@ test('delete a user', async ({ page }) => {
   await page.getByRole('button', { name: 'Delete' }).last().click();
   const dialog = page.getByRole('alertdialog');
   await expect(dialog.getByText('Delete User')).toBeVisible();
-  await page.getByRole('button', { name: 'Delete' }).click();
+  await dialog.getByRole('button', { name: 'Delete' }).click();
   await expect(dialog).toBeHidden();
   await expect(page.getByText('User deleted successfully')).toBeVisible();
   await expect(page.getByText('Frodo')).toBeHidden();
@@ -64,7 +64,7 @@ test('submit the user form with empty fields', async ({ page }) => {
   await page.getByRole('button', { name: 'Create user' }).click();
   const modal = page.getByRole('dialog');
   await expect(modal.getByText('Create User')).toBeVisible();
-  await page.getByRole('button', { name: 'Submit' }).click();
+  await modal.getByRole('button', { name: 'Submit' }).click();
   await expect(modal).toBeVisible();
   await expect(page.getByText('Please enter a first name')).toBeVisible();
   await expect(page.getByText('Please enter a last name')).toBeVisible();
@@ -82,7 +82,7 @@ test('submit the user form with invalid fields', async ({ page }) => {
     .fill('This name is longer than twenty characters');
   await page.getByLabel('Gender').selectOption('');
   await page.getByLabel('Age').fill('1');
-  await page.getByRole('button', { name: 'Submit' }).click();
+  await modal.getByRole('button', { name: 'Submit' }).click();
   await expect(modal).toBeVisible();
   await expect(
     page.getByText('First name must be at least 5 characters')
@@ -105,7 +105,7 @@ test('submit the user form with invalid male age', async ({ page }) => {
   await expect(modal.getByText('Create User')).toBeVisible();
   await page.getByLabel('Gender').selectOption('MALE');
   await page.getByLabel('Age').fill('113');
-  await page.getByRole('button', { name: 'Submit' }).click();
+  await modal.getByRole('button', { name: 'Submit' }).click();
   await expect(modal).toBeVisible();
   await expect(page.getByText('Age must be 112 or less')).toBeVisible();
 });
@@ -116,7 +116,7 @@ test('submit the user form with invalid female age', async ({ page }) => {
   await expect(modal.getByText('Create User')).toBeVisible();
   await page.getByLabel('Gender').selectOption('FEMALE');
   await page.getByLabel('Age').fill('118');
-  await page.getByRole('button', { name: 'Submit' }).click();
+  await modal.getByRole('button', { name: 'Submit' }).click();
   await expect(modal).toBeVisible();
   await expect(page.getByText('Age must be 117 or less')).toBeVisible();
 });
