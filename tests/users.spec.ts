@@ -16,7 +16,7 @@ const createNewUser = async (page: Page) => {
 };
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:5173/');
+  await page.goto('http://localhost:5173/users');
 });
 
 test('load the page', async ({ page }) => {
