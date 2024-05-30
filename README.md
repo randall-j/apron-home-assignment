@@ -1,8 +1,16 @@
-# Apron home assignment
+# Apron Home Assignment - Senior Frontend Engineer
 
 ## Description
 
-This project is the Apron take home assignment. It is a simple web application that displays a list of users, and allows you to create and edit users. The project is built using React and TypeScript.
+This project is the Apron take home assignment for the role of Senior Frontend Engineer. It is a simple web application that displays a list of users, and allows you to create and edit users.
+
+## Tech Stack
+
+- React
+- TypeScript
+- Chakra UI
+- React Query
+- Vite
 
 ## Getting Started
 
@@ -15,11 +23,11 @@ This project is the Apron take home assignment. It is a simple web application t
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone git@github.com:randall-j/apron-home-assignment.git
+   ```bash
+   git clone https://github.com/randall-j/apron-home-assignment.git
    ```
-2. Install NPM packages
-   ```sh
+2. Install dependencies
+   ```bash
    npm install
    ```
 
@@ -33,7 +41,7 @@ npm run dev
 
 Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+The page will reload when you make changes.
 
 ## Testing
 
@@ -58,5 +66,3 @@ npm run build
 ```
 
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
